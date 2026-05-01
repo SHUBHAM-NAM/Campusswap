@@ -10,14 +10,25 @@ const typeColors = {
 const NoteCard = ({ note }) => {
 
   const handleDownload = async () => {
-    try {
-      const res = await api.patch(`/notes/${note._id}/download`);
-      window.open(res.data.fileUrl, '_blank');
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  try {
+    const res = await api.patch(`/notes/${note._id}/download`);
+    const fileUrl = res.data.fileUrl;
 
+    // Force download with correct filename and .pdf extension
+    const link = document.createElement('a');
+    link.href = fileUrl;
+    link.setAttribute('download', `${note.title}.pdf`);
+    link.setAttribute('target', '_blank');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+  } catch (error) {
+    console.error(error);
+    // Fallback
+    window.open(note.fileUrl, '_blank');
+  }
+};
   return (
     <div className="bg-white rounded-xl shadow-md p-5 hover:shadow-lg transition">
       {/* Type Badge */}

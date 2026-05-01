@@ -20,10 +20,13 @@ const imageStorage = new CloudinaryStorage({
 // For notes/PDFs
 const pdfStorage = new CloudinaryStorage({
   cloudinary,
-  params: {
-    folder: 'campusswap/notes',
-    allowed_formats: ['pdf'],
-    resource_type: 'raw',
+  params: async (req, file) => {
+    return {
+      folder: 'campusswap/notes',
+      resource_type: 'raw',        // ← critical for PDFs
+      format: 'pdf',               // ← force .pdf extension
+      public_id: `${Date.now()}-${file.originalname.replace('.pdf', '')}`,
+    };
   },
 });
 
