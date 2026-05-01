@@ -76,7 +76,7 @@ const Register = () => {
           <input
             type="text"
             name="branch"
-            placeholder="Branch (e.g. CSE, IT, ECE)"
+            placeholder="Branch (e.g. BCA,BBA,MCA,MBA)"
             onChange={handleChange}
             required
             className="w-full border px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
@@ -88,7 +88,7 @@ const Register = () => {
             className="w-full border px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
           >
             <option value="">Select Semester</option>
-            {[1,2,3,4,5,6,7,8].map(s => (
+            {[1,2,3,4,5,6].map(s => (
               <option key={s} value={s}>Semester {s}</option>
             ))}
           </select>
