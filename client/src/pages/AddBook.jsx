@@ -59,14 +59,14 @@ const AddBook = () => {
             <select name="semester" onChange={handleChange} required
               className="border px-4 py-2 rounded-lg focus:outline-none">
               <option value="">Semester</option>
-              {[1,2,3,4,5,6,7,8].map(s => (
+              {[1,2,3,4,5,6].map(s => (
                 <option key={s} value={s}>Sem {s}</option>
               ))}
             </select>
             <select name="branch" onChange={handleChange} required
               className="border px-4 py-2 rounded-lg focus:outline-none">
               <option value="">Branch</option>
-              {['CSE','IT','ECE','ME','CE','EE'].map(b => (
+              {['BCA','BBA','MCA','BA','BSC','BCOM'].map(b => (
                 <option key={b} value={b}>{b}</option>
               ))}
             </select>

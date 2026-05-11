@@ -10,7 +10,7 @@ import Notes from "./pages/Notes";
 import UploadNote from "./pages/UploadNote";
 import BookDetail from "./pages/BookDetail";
 import Profile from "./pages/Profile";
-
+import MyChats from "./pages/MyChats";
 const ProtectedRoute = ({ children }) => {
   const { user } = useAuth();
   return user ? children : <Navigate to="/login" />;
@@ -54,6 +54,9 @@ function App() {
             } />
             <Route path="/books/:id" element={
   <ProtectedRoute><BookDetail /></ProtectedRoute>
+} />
+<Route path="/my-chats" element={
+  <ProtectedRoute><MyChats /></ProtectedRoute>
 } />
           </Routes>
         </Layout>

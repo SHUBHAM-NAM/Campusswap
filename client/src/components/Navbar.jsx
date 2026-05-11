@@ -16,7 +16,7 @@ const Navbar = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
+    <nav className=" bg-gray-100 shadow-md sticky top-0 z-50 ">
       <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
 
         {/* Logo */}
@@ -26,6 +26,11 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-6">
+          <Link to="/my-chats"
+  className={`text-sm font-medium transition
+    ${isActive('/my-chats') ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'}`}>
+  💬 My Chats
+</Link>
           <Link to="/books"
             className={`text-sm font-medium transition
               ${isActive('/books') ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'}`}>
@@ -68,6 +73,11 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden bg-white border-t px-4 py-4 space-y-3">
+          <Link to="/my-chats"
+  className={`text-sm font-medium transition
+    ${isActive('/my-chats') ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'}`}>
+  💬 My Chats
+</Link>
           <Link to="/books" onClick={() => setMenuOpen(false)}
             className="block text-sm font-medium text-gray-700 hover:text-blue-600">
             📚 Browse Books
