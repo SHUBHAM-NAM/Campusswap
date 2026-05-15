@@ -16,12 +16,16 @@ const server = http.createServer(app);
 // Attach Socket.io to server
 const io = new Server(server, {
   cors: {
-    origin: 'http://localhost:5173',
+    origin: '*',
     methods: ['GET', 'POST']
   }
 });
 
-app.use(cors());
+app.use(cors(
+  {
+  origin: '*'
+}
+));
 app.use(express.json());
 
 // Routes
