@@ -4,8 +4,8 @@ const {
   getNotes, getNoteById,
   uploadNote, incrementDownload, deleteNote
 } = require('../controllers/noteController');
-const { protect } = require('../middleware/authMiddleware');
-const { uploadPDF } = require('../middleware/uploadMiddleware');
+const { protect } = require('../middleware/authmiddleware');
+const { uploadPDF } = require('../middleware/uploadmiddleware');
 
 router.get('/', getNotes);
 router.get('/:id', getNoteById);
