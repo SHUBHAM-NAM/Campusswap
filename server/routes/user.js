@@ -4,7 +4,7 @@ const {
   getProfile, updateProfile,
   getMyBooks, getMyNotes
 } = require('../controllers/userController');
-const { protect } = require('../middleware/authMiddleware');
+const { protect } = require('../middleware/authmiddleware');
 
 router.get('/profile', protect, getProfile);
 router.put('/profile', protect, updateProfile);
