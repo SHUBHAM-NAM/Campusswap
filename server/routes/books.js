@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { getBooks, getBookById, createBook, markAsSold, deleteBook } = require('../controllers/bookController');
-const { protect } = require('../middleware/authMiddleware');
+const { protect } = require('../middleware/authmiddleware');
 const { uploadImage } = require('../middleware/uploadMiddleware');
 
 router.get('/', getBooks);
