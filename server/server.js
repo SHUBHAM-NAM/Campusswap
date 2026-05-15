@@ -35,6 +35,11 @@ app.use('/api/notes', require('./routes/notes'));
 app.use('/api/user', require('./routes/user'));
 app.use('/api/chat', require('./routes/chat'));
 
+// Root route
+app.get('/', (req, res) => {
+  res.send('Welcome to the CampusSwap API!');
+});
+
 // Socket.io Logic
 io.on('connection', (socket) => {
   console.log('User connected:', socket.id);
