@@ -1,5 +1,5 @@
 const Chat = require('../models/Chat');
-const User = require('../models/User');
+const User = require('../models/user');
 
 // GET chat history for a room
 const getChatHistory = async (req, res) => {
